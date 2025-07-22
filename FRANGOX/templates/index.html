@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>FrangoX - Admin</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h2>FRANGOX</h2>
+      <form method="POST" action="/add-cliente">
+        <button type="submit" class="btn">ADICIONAR USUÁRIO</button>
+      </form>
+      <form method="POST" action="/add-produto">
+        <button type="submit" class="btn">ADICIONAR PRODUTO</button>
+      </form>
+      <form method="POST" action="/fazer-pedido">
+        <button type="submit" class="btn">FAZER PEDIDO</button>
+      </form>
+    </div>
+    
+    <div class="main">
+      {{range .Pedidos}}
+      <div class="pedido">
+        <div>
+          <strong>PEDIDO: #{{.ID}}</strong><br>
+          CLIENTE: {{.Cliente}}<br>
+          TIPO DE ENTREGA: {{.Entrega}}<br>
+          PRODUTO: {{.Produto}}<br>
+        </div>
+        <div class="pedido-info">
+          <div><strong>PREÇO: R${{.Preco}}</strong></div>
+          <form method="GET" action="/ver-pedido/{{.ID}}">
+            <button class="ver">VER PEDIDO</button>
+          </form>
+          <div class="{{.StatusClass}}">{{.Status}}</div>
+        </div>
+      </div>
+      {{end}}
+    </div>
+  </div>
+</body>
+</html>

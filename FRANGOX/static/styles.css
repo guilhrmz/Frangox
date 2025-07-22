@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  background-color: #d3d3d3;
+  padding: 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.btn {
+  width: 100%;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 20px;
+  border: none;
+  background-color: #aaa;
+  cursor: pointer;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 30px;
+  overflow-y: scroll;
+  background: #ececec;
+}
+
+.pedido {
+  background: #888;
+  color: black;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pedido-info {
+  text-align: right;
+}
+
+.ver {
+  background-color: red;
+  color: white;
+  padding: 8px 12px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.VENDIDO {
+  background-color: green;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+.PENDENTE {
+  background-color: red;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
