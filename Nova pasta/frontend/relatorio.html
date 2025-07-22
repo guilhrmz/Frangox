@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório de Vendas - FRANGOX</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>RELATÓRIO DE VENDAS</h1>
+    
+    <div id="relatorio">
+      <p><strong>Total de Vendas:</strong> R$ <span id="total-vendas">0.00</span></p>
+      <p><strong>Total de Pedidos Vendidos:</strong> <span id="qtd-pedidos">0</span></p>
+      <p><strong>Lucro Estimado:</strong> R$ <span id="lucro">0.00</span></p>
+    </div>
+
+    <div class="status">
+      <button class="btn ver" onclick="gerar('pdf')">Gerar PDF</button>
+      <button class="btn ver" onclick="gerar('txt')">Gerar TXT</button>
+      <button class="btn ver" onclick="gerar('docx')">Gerar DOCX</button>
+    </div>
+  </div>
+
+  <script>
+    async function carregarRelatorio() {
+      const response = await fetch('http://localhost:8080/relatorio');
+      const data = await response.json();
+      document.getElementById('total-vendas').innerText = data.total_vendas.toFixed(2);
+      document.getElementById('qtd-pedidos').innerText = data.total_pedidos;
+      document.getElementById('lucro').innerText = data.lucro.toFixed(2);
+    }
+
+    function gerar(tipo) {
+      window.open(`http://localhost:8080/relatorio/download?tipo=${tipo}`, '_blank');
+    }
+
+    carregarRelatorio();
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .sidebar {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .sidebar button {
+    padding: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    background: #aaa;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .orders {
+    background: #888;
+    padding: 20px;
+    border-radius: 20px;
+    max-height: 500px;
+    overflow-y: auto;
+  }
+  
+  .order {
+    background: #666;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    color: white;
+  }
+  
+  .status {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .btn {
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .ver { background: red; }
+  .vendido { background: green; }
+  .pendente { background: red; }
+  
+
