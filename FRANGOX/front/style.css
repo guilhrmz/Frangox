@@ -1,0 +1,30 @@
+/* Container dos botões */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaço entre botões */
+    margin-top: 20px;
+}
+
+/* Estilo dos cards */
+.card {
+    width: 200px;
+    text-align: center;
+}
+
+/* Centralizar iframe */
+.iframe-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Tamanho do iframe */
+#iframe {
+    width: 800px;
+    height: 800px;
+
+}
+.btn{
+    align-items: end;
+}
